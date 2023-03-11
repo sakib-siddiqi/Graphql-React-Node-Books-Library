@@ -9,14 +9,7 @@ export const booksQuery = (fields = FIELDS.book) => {
   return gql`
     query GetBooks {
       books {
-        name
-        id
-        genre
-        author {
-          name
-          age
-          id
-        }
+        ${fields}
       }
     }
   `;
