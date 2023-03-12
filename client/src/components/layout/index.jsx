@@ -5,13 +5,13 @@ import Header from "./Header";
 
 function Layout() {
   return (
-    <>
+    <div className="app-container min-h-screen flex flex-col ">
       <Header />
-      <main>
+      <main className="flex-grow">
         <Outlet />
       </main>
       <Footer />
-    </>
+    </div>
   );
 }
 

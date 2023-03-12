@@ -2,24 +2,12 @@ const {
   GraphQLObjectType,
   GraphQLSchema,
   GraphQLString,
-  GraphQLInt,
   GraphQLID,
   GraphQLList,
 } = require("graphql");
 const _ = require("lodash");
-
-export const DUMMY = {
-  BOOKS: [
-    { name: "asdf", id: "1", genre: "fun", authorId: "1" },
-    { name: "asdfasdf", id: "2", genre: "fun", authorId: "1" },
-    { name: "asdfasdfadsf", id: "3", genre: "fun", authorId: "3" },
-  ],
-  AUTHOR: [
-    { name: "Sakib", id: "1", age: 21 },
-    { name: "siddiqi", id: "2", age: 20 },
-    { name: "sami", id: "3", age: 20 },
-  ],
-};
+const DUMMY=require("../data/DUMMY");
+const { BookType, AuthorType } = require("./type");
 
 const RootQuery = new GraphQLObjectType({
   name: "RootQueryType",

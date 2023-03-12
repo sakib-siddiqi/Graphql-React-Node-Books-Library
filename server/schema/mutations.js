@@ -1,3 +1,5 @@
+const { AuthorType } = require("./type");
+
 const mutations = {};
 
 mutations.addBook = {

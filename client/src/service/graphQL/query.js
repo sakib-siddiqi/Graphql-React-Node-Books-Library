@@ -1,8 +1,8 @@
 import { gql } from "@apollo/client";
 
 const FIELDS = {
-  book: "name,id,genre,author{name,age,id}",
-  author: "name,id,age,books{name,age,id}",
+  book: "name,id,genre,author{name,id}",
+  author: "name,id,age,books{name,genre,id}",
 };
 
 export const booksQuery = (fields = FIELDS.book) => {
@@ -27,8 +27,8 @@ export function bookQuery(id = 1, fields = FIELDS.book) {
 
 export const authorsQuery = (fields = FIELDS.author) => {
   return gql`
-          query GetBooks{
-              author{
+          query GetAuthors{
+              authors{
                   ${fields}
               }
           }
