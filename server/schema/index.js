@@ -6,12 +6,11 @@ const {
   GraphQLList,
 } = require("graphql");
 const _ = require("lodash");
-const DUMMY=require("../data/DUMMY");
+const DUMMY = require("../data/DUMMY");
 const { BookType, AuthorType } = require("./type");
 
 const RootQuery = new GraphQLObjectType({
   name: "RootQueryType",
-
   fields: {
     books: {
       type: new GraphQLList(BookType),
@@ -43,6 +42,8 @@ const RootQuery = new GraphQLObjectType({
       },
     },
   },
+  defaultValue:
+    "query Quries{ books { name author { name } } authors{ name,age,id,books{name} } book(id: 1) { name genre id author { name age books { name genre id author { name } } } } }",
 });
 
 const Mutation = new GraphQLObjectType({
